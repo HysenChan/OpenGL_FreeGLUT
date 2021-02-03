@@ -55,7 +55,7 @@ void init()
 {
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 	glMatrixMode(GL_PROJECTION);
-	gluOrtho2D(0.0, 200.0, 0.0, 200.0);
+	gluOrtho2D(0.0, 640, 0.0, 960);
 }
 
 void lineSegment()
@@ -71,13 +71,26 @@ void lineSegment()
 	glFlush();
 }
 
+GLenum errorCheck()
+{
+	GLenum code;
+	const GLubyte* string;
+	code = glGetError();
+	if (code != GL_NO_ERROR)
+	{
+		string = gluErrorString(code);
+		fprintf(stderr, "OpenGL error:%s\n", string);
+	}
+	return code;
+}
+
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
 	glutInitWindowPosition(20, 20);
 	glutInitWindowSize(640, 960);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-	glutCreateWindow("An Example OpenGL Program");
+	glutCreateWindow("A Line");
 
 	init();
 	glutDisplayFunc(lineSegment);

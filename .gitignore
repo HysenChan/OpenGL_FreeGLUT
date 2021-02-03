@@ -39,3 +39,7 @@ ipch/
 *.opensdf
 *.sdf
 *.cachefile
+*.idb
+*.tlog
+*.ilk
+*.pdb

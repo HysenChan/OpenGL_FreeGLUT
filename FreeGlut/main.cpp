@@ -21,7 +21,7 @@
 //}
 
 //-----方法2：-----
-#include <windows.h>
+#/*include <windows.h>
 #include <stdio.h>
 #include <GL/freeglut.h>
 
@@ -42,6 +42,46 @@ int main(int argc, char** argv)
 	printf("OGLU工具库版本：%s\n", gluVersion);
 
 	system("pause");
+
+	return 0;
+}*/
+
+#include<Windows.h>
+#include<stdio.h>
+#include<GL/freeglut.h>
+#include "main.h"
+
+void init()
+{
+	glClearColor(1.0, 1.0, 1.0, 1.0);
+	glMatrixMode(GL_PROJECTION);
+	gluOrtho2D(0.0, 200.0, 0.0, 200.0);
+}
+
+void lineSegment()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(0.0, 0.4, 0.2);
+
+	glBegin(GL_LINES);
+		glVertex2i(180, 15);
+		glVertex2i(10, 145);
+	glEnd();
+
+	glFlush();
+}
+
+int main(int argc, char** argv)
+{
+	glutInit(&argc, argv);
+	glutInitWindowPosition(20, 20);
+	glutInitWindowSize(640, 960);
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	glutCreateWindow("An Example OpenGL Program");
+
+	init();
+	glutDisplayFunc(lineSegment);
+	glutMainLoop();
 
 	return 0;
 }

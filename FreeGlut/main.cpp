@@ -54,12 +54,12 @@ int main(int argc, char** argv)
 struct Width
 {
 	int min = 0.0;
-	int max = 640.0;
+	int max = 160;
 };
 struct Height
 {
 	int min = 0.0;
-	int max = 960.0;
+	int max = 240.0;
 };
 
 void init()
@@ -82,10 +82,10 @@ void lineSegment()
 		glVertex2i(10, 145);
 	glEnd();*/
 
-	glBegin(GL_POINT);
-		glVertex2f(50, 100);
-		glVertex2f(75, 150);
-		glVertex2f(100, 200);
+	glBegin(GL_POINTS);
+		glVertex2i(50, 100);
+		glVertex2i(75, 150);
+		glVertex2i(100, 200);
 	glEnd();
 
 	glFlush();

@@ -75,7 +75,7 @@ void init()
 void lineSegment()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0.0, 0.4, 0.2);
+	glColor3f(0.0, 0.0, 0.0);
 
 	/*glBegin(GL_LINES);
 		glVertex2i(180, 15);
@@ -86,7 +86,7 @@ void lineSegment()
 	int point2[] = { 75,100 };
 	int point3[] = { 100,200 };
 
-	glBegin(GL_POINTS);
+	glBegin(GL_LINE_LOOP);//GL_LINES:连起来1-2；GL_LINE_STRIP:连起来1-2-3；GL_LINE_LOOP:连起来了1-2-3-1
 		glVertex2iv(point1);
 		glVertex2iv(point2);
 		glVertex2iv(point3);

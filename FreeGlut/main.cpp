@@ -82,10 +82,14 @@ void lineSegment()
 		glVertex2i(10, 145);
 	glEnd();*/
 
+	int point1[] = { 50,100 };
+	int point2[] = { 75,100 };
+	int point3[] = { 100,200 };
+
 	glBegin(GL_POINTS);
-		glVertex2i(50, 100);
-		glVertex2i(75, 150);
-		glVertex2i(100, 200);
+		glVertex2iv(point1);
+		glVertex2iv(point2);
+		glVertex2iv(point3);
 	glEnd();
 
 	glFlush();
@@ -107,14 +111,15 @@ GLenum errorCheck()
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
-	glutInitWindowPosition(20, 20);
+	glutInitWindowPosition(300, 20);
 	glutInitWindowSize(640, 960);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-	glutCreateWindow("A Line");
+	glutCreateWindow("OpenGL");
 
 	init();
 	glutDisplayFunc(lineSegment);
 	glutMainLoop();
+	errorCheck();
 
 	return 0;
 }

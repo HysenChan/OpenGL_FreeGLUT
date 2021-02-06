@@ -51,11 +51,25 @@ int main(int argc, char** argv)
 #include<GL/freeglut.h>
 #include "main.h"
 
+struct Width
+{
+	int min = 0.0;
+	int max = 640.0;
+};
+struct Height
+{
+	int min = 0.0;
+	int max = 960.0;
+};
+
 void init()
 {
+	Width x;
+	Height y;
+	
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 	glMatrixMode(GL_PROJECTION);
-	gluOrtho2D(0.0, 640, 0.0, 960);
+	gluOrtho2D(x.min, x.max, y.min, y.max);
 }
 
 void lineSegment()

@@ -53,13 +53,13 @@ int main(int argc, char** argv)
 
 struct Width
 {
-	int min = 0.0;
-	int max = 160;
+	float min = 0.0;
+	float max = 160;
 };
 struct Height
 {
-	int min = 0.0;
-	int max = 240.0;
+	float min = 0.0;
+	float max = 240.0;
 };
 
 void init()

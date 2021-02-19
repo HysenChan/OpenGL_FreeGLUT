@@ -62,6 +62,12 @@ struct Height
 	float max = 240.0;
 };
 
+class wcPt2D
+{
+public:
+	GLfloat x, y;
+};
+
 void init()
 {
 	Width x;
@@ -86,10 +92,19 @@ void lineSegment()
 	int point2[] = { 75,100 };
 	int point3[] = { 100,200 };
 
-	glBegin(GL_LINE_LOOP);//GL_LINES:连起来1-2；GL_LINE_STRIP:连起来1-2-3；GL_LINE_LOOP:连起来了1-2-3-1
-		glVertex2iv(point1);
+	wcPt2D pointPos;
+	pointPos.x = 120.75;
+	pointPos.y = 45.30;
+
+	glBegin(GL_POINTS);//GL_LINES:连起来1-2；GL_LINE_STRIP:连起来1-2-3；GL_LINE_LOOP:连起来了1-2-3-1
+		/*glVertex2iv(point1);
 		glVertex2iv(point2);
-		glVertex2iv(point3);
+		glVertex2iv(point3);*/
+
+		/*glVertex3f(-78.05, 909.72, 14.60);
+		glVertex3f(261.91, -5200.67, 188.33);*/
+
+		glVertex2f(pointPos.x, pointPos.y);
 	glEnd();
 
 	glFlush();

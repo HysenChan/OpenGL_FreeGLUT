@@ -1,2 +1,3 @@
 ﻿  main.cpp
+E:\FreeGlut_Projects\FreeGlut\FreeGlut\main.cpp(97,20): warning C4305: “=”: 从“double”到“GLfloat”截断
   FreeGlut.vcxproj -> E:\FreeGlut_Projects\FreeGlut\x64\Debug\FreeGlut.exe

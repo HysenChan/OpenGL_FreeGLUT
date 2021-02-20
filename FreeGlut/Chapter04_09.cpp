@@ -9,9 +9,6 @@ vertex3 pt[8] = { {0,0,0},{0,1,0},{1,0,0},{1,1,0},
 
 void cube()
 {
-	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0.0, 0.0, 0.0);
-
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glVertexPointer(3, GL_INT, 0, pt);
 
@@ -20,7 +17,7 @@ void cube()
 	glDrawElements(GL_QUADS, 24, GL_UNSIGNED_BYTE, vertIndex);
 
 	glFlush();
-}										
+}
 
 void init()							 
 	{										
@@ -37,6 +34,8 @@ int main(int argc, char** argv)
 	glutCreateWindow("OpenGL");
 
 	init();
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(0.0, 0.0, 0.0);
 	glutDisplayFunc(cube);
 	glutMainLoop();
 

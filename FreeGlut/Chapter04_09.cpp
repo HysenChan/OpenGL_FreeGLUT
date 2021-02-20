@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<GL/freeglut.h>
 #include "main.h"
+#include<math.h>
 
 typedef GLint vertex3[3];
 vertex3 pt[8] = { {0,0,0},{0,1,0},{1,0,0},{1,1,0},
@@ -40,6 +41,35 @@ void shape()
 	glFlush();
 }
 
+const double TWO_PI = 6.2831853;
+
+GLuint regHex;
+
+GLdouble theta;
+GLint x, y, k;
+
+void displayTable()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(0.0, 0.0, 0.0);
+
+	regHex = glGenLists(1);
+	glNewList(regHex, GL_COMPILE);
+		glBegin(GL_POLYGON);
+		for (k = 0; k < 6; k++)
+		{
+			theta = TWO_PI * k / 6.0;
+			x = 200 + 150 * cos(theta);
+			y = 200 + 150 * sin(theta);
+			glVertex2i(x, y);
+		}
+		glEnd();
+	glEndList();
+	glCallList(regHex);
+
+	glFlush();
+}
+
 void init()							 
 {										
 	glClearColor(1.0, 1.0, 1.0, 1.0);
@@ -56,7 +86,8 @@ int main(int argc, char** argv)
 
 	init();
 	//glutDisplayFunc(cube);
-	glutDisplayFunc(shape);
+	//glutDisplayFunc(shape);
+	//glutDisplayFunc(displayTable);
 	glutMainLoop();
 
 	return 0;

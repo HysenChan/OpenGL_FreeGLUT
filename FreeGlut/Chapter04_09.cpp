@@ -76,7 +76,7 @@ void init()
 	glMatrixMode(GL_PROJECTION);
 }
 
-int main(int argc, char** argv)
+int main_04_09(int argc, char** argv)
 {
 	glutInit(&argc, argv);
 	glutInitWindowPosition(20, 20);

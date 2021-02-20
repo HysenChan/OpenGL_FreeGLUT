@@ -9,6 +9,9 @@ vertex3 pt[8] = { {0,0,0},{0,1,0},{1,0,0},{1,1,0},
 
 void cube()
 {
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(0.0, 0.0, 0.0);
+
 	glEnableClientState(GL_VERTEX_ARRAY);
 	glVertexPointer(3, GL_INT, 0, pt);
 
@@ -19,24 +22,41 @@ void cube()
 	glFlush();
 }
 
+GLubyte bitshape[20] = {
+	0x1c,0x00,0x1c,0x00,0x1c,0x00,0x1c,0x00,0x1c,0x00,
+	0xff,0x80,0x7f,0x00,0x3e,0x00,0x1c,0x00,0x08,0x00
+};
+
+void shape()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+	glColor3f(0.0, 0.0, 0.0);
+
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+
+	glRasterPos2i(30, 40);
+	glBitmap(9, 10, 0.0, 0.0, 20.0, 15.0, bitshape);
+
+	glFlush();
+}
+
 void init()							 
-	{										
-		glClearColor(1.0, 1.0, 1.0, 1.0);
+{										
+	glClearColor(1.0, 1.0, 1.0, 1.0);
 	glMatrixMode(GL_PROJECTION);
 }
 
 int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
-	glutInitWindowPosition(300, 20);
-	glutInitWindowSize(640, 960);
+	glutInitWindowPosition(20, 20);
+	glutInitWindowSize(1280, 720);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutCreateWindow("OpenGL");
 
 	init();
-	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(0.0, 0.0, 0.0);
-	glutDisplayFunc(cube);
+	//glutDisplayFunc(cube);
+	glutDisplayFunc(shape);
 	glutMainLoop();
 
 	return 0;

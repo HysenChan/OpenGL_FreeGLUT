@@ -52,8 +52,8 @@ static void init(void)
 			for (k = 0; k < 6; k++)
 			{
 				theta = TWO_PI * k / 6.0;
-				hexVertex.setCoords(circCtr.getx() + 150 * cos(theta),
-					circCtr.gety() + 150 * sin(theta));
+				hexVertex.setCoords((int)(circCtr.getx() + 150 * cos(theta)),
+					(int)(circCtr.gety() + 150 * sin(theta)));
 				glVertex2i(hexVertex.getx(), hexVertex.gety());
 			}
 		glEnd();
@@ -76,7 +76,7 @@ void winReshapeFcn(int newWidth, int newHeight)
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void main(int argc, char** argv)
+int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);

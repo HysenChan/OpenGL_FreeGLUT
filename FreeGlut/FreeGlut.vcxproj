@@ -114,7 +114,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);NDEBUG;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -140,6 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Chapter04_08.cpp" />
+    <ClCompile Include="Chapter04_09.cpp" />
+    <ClCompile Include="Chapter04_16.cpp" />
+    <ClCompile Include="lineGraph.cpp" />
+    <ClCompile Include="pieGraph.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h" />

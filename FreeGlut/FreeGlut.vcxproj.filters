@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\Chapter04">
+      <UniqueIdentifier>{0f5ce653-67af-42ba-989a-b7907dae8dee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -20,8 +23,20 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="lineGraph.cpp">
+      <Filter>源文件\Chapter04</Filter>
+    </ClCompile>
     <ClCompile Include="Chapter04_08.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\Chapter04</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04_09.cpp">
+      <Filter>源文件\Chapter04</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04_16.cpp">
+      <Filter>源文件\Chapter04</Filter>
+    </ClCompile>
+    <ClCompile Include="pieGraph.cpp">
+      <Filter>源文件\Chapter04</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

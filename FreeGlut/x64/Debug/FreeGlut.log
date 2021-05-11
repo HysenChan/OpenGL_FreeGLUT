@@ -1,3 +1,4 @@
-﻿  main.cpp
-E:\FreeGlut_Projects\FreeGlut\FreeGlut\main.cpp(97,20): warning C4305: “=”: 从“double”到“GLfloat”截断
+﻿  pieGraph.cpp
+E:\FreeGlut_Projects\FreeGlut\FreeGlut\pieGraph.cpp(134,23): warning C4244: “=”: 从“double”转换到“GLint”，可能丢失数据
+E:\FreeGlut_Projects\FreeGlut\FreeGlut\pieGraph.cpp(135,23): warning C4244: “=”: 从“double”转换到“GLint”，可能丢失数据
   FreeGlut.vcxproj -> E:\FreeGlut_Projects\FreeGlut\x64\Debug\FreeGlut.exe
